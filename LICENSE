@@ -1,4 +1,4 @@
-## COPYRIGHT NOTICES FOR THIRD-PARTY PRODUCTS/LIBRARIES
+# COPYRIGHT NOTICES FOR THIRD-PARTY PRODUCTS/LIBRARIES USED BY SPEEDTEST-CLI
 This software incorporates free and open source third-party libraries, including:
 
 * [boost](https://www.boost.org/)
@@ -16,14 +16,14 @@ Inclusion of mbed TLS is subject to presentation of the following license terms
 to recipients of this software: [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
 (a copy of which is included with the documentation of this software)
 
-### Inclusion of libcurl is subject to distribution of the software with the following notice:
+## Inclusion of libcurl is subject to distribution of the software with the following notice:
 
     Copyright (c) 1996 - 2019, Daniel Stenberg, daniel@haxx.se, and many contributors,
     see the THANKS file.  All rights reserved.  Permission to use, copy, modify, and distribute
     this software for any purpose with or without fee is hereby granted, provided that
     the above copyright notice and this permission notice appear in all copies.
 
-### Inclusion of getopt.h is subject to distribution of the software with the following notice:
+## Inclusion of getopt.h is subject to distribution of the software with the following notice:
 
     DISCLAIMER
     This file is part of the mingw-w64 runtime package.
@@ -55,7 +55,7 @@ to recipients of this software: [http://www.apache.org/licenses/LICENSE-2.0](htt
        notice, this list of conditions and the following disclaimer in the
        documentation and/or other materials provided with the distribution.
 
-### Inclusion of PicoSHA2 is subject to distribution of the software with the following notice:
+## Inclusion of PicoSHA2 is subject to distribution of the software with the following notice:
 
     Copyright (c) 2017 okdshin
 
@@ -69,7 +69,7 @@ to recipients of this software: [http://www.apache.org/licenses/LICENSE-2.0](htt
     The above copyright notice and this permission notice shall be included in all
     copies or substantial portions of the Software.
 
-### Inclusion of musl is subject to distribution of the software with the following notice:
+## Inclusion of musl is subject to distribution of the software with the following notice:
 
     Copyright © 2005-2019 Rich Felker, et al.
 
