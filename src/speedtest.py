@@ -16,7 +16,7 @@ def speedtest() -> None:
             check=True
             )
     except subprocess.CalledProcessError as e:
-        exit('Error testing internet connection.')
+        exit(f'{datetime.now()} - Error testing internet connection.')
     else:
         try:
             with open(f'{directory}/data/results.json', mode = 'wt') as file: 
