@@ -12,8 +12,9 @@ parser = argparse.ArgumentParser(
 )
 parser.add_argument(
     '-o', '--output',
-    help = 'Full path to file where data will be saved. Defaults to '
-    f'{directory}/data/results.csv',
+    help = 'Full path to file where data will be saved. '
+    'You must have write permission to such path. '
+    f'Defaults to {directory}/data/results.csv',
     type = str,
     nargs = 1,
     metavar = 'filepath',
