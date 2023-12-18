@@ -16,7 +16,6 @@ parser.add_argument(
     'You must have write permission to such path. '
     f'Defaults to {directory}/data/results.csv',
     type = str,
-    nargs = 1,
     metavar = 'filepath',
     default = f'{directory}/data/results.csv'
     )
@@ -24,6 +23,7 @@ args = parser.parse_args()
 
 def main() -> None:
     speedtest()
+    print(args.output)
     results_to_tsv(args.output)
 
 if __name__ == "__main__":
