@@ -13,7 +13,7 @@ def results_to_tsv(filepath: str) -> None:
     -----------
     filepath : str
         A valid file path to save the file to. You must have write
-        access to such path.
+        permission to such path.
     """
     
     try:

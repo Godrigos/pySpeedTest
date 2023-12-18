@@ -6,7 +6,7 @@ from settings import directory
 import argparse
 
 parser = argparse.ArgumentParser(
-    prog = 'SpeedTest',
+    prog = 'pySpeedTest',
     description = 'Internet connection speed test.',
     epilog = 'Source executable by Ookla, LLC.'
 )
