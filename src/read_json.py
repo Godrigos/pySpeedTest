@@ -33,7 +33,7 @@ def results_to_tsv(filepath: str) -> None:
 
         try:
             with open(filepath, mode = 'at') as file:
-                file.write(f"{tz_converter(data['timestamp'])}\t{data['isp']}\t{data['interface']['externalIp']}\t{data['server']['name']}\t{data['server']['location']}\t{data['ping']['latency']}\t{data['download']['bandwidth']/125000}\t{data['download']['latency']['iqm']}\t{data['upload']['bandwidth']/125000}\t{data['upload']['latency']['iqm']}\t{data['packetLoss']}\t{data['result']['id']}\n")
+                file.write(f"{tz_converter(data['timestamp'], 'America/Sao_Paulo')}\t{data['isp']}\t{data['interface']['externalIp']}\t{data['server']['name']}\t{data['server']['location']}\t{data['ping']['latency']}\t{data['download']['bandwidth']/125000}\t{data['download']['latency']['iqm']}\t{data['upload']['bandwidth']/125000}\t{data['upload']['latency']['iqm']}\t{data['packetLoss']}\t{data['result']['id']}\n")
             file.close()
         except:
             exit(f'{datetime.now()} - Error writing data to {filepath}')
