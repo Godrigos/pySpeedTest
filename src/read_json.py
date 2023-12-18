@@ -1,7 +1,7 @@
 import json
 from os.path import exists
 from settings import directory
-from datetime import date, datetime
+from datetime import datetime
 from src.tz_converter import tz_converter
 
 def results_to_tsv(filepath: str) -> None:
@@ -33,7 +33,20 @@ def results_to_tsv(filepath: str) -> None:
 
         try:
             with open(filepath, mode = 'at') as file:
-                file.write(f"{tz_converter(data['timestamp'], 'America/Sao_Paulo')}\t{data['isp']}\t{data['interface']['externalIp']}\t{data['server']['name']}\t{data['server']['location']}\t{data['ping']['latency']}\t{data['download']['bandwidth']/125000}\t{data['download']['latency']['iqm']}\t{data['upload']['bandwidth']/125000}\t{data['upload']['latency']['iqm']}\t{data['packetLoss']}\t{data['result']['id']}\n")
+                file.write(
+                    f"{tz_converter(data['timestamp'], 'America/Sao_Paulo')}"
+                    f"\t{data['isp']}"
+                    f"\t{data['interface']['externalIp']}"
+                    f"\t{data['server']['name']}"
+                    f"\t{data['server']['location']}"
+                    f"\t{data['ping']['latency']}"
+                    f"\t{data['download']['bandwidth']/125000}"
+                    f"\t{data['download']['latency']['iqm']}"
+                    f"\t{data['upload']['bandwidth']/125000}"
+                    f"\t{data['upload']['latency']['iqm']}"
+                    f"\t{data['packetLoss']}"
+                    f"\t{data['result']['id']}"
+                    "\n")
             file.close()
         except:
             exit(f'{datetime.now()} - Error writing data to {filepath}')
