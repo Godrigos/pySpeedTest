@@ -11,9 +11,12 @@ def tz_converter(date: str) -> datetime:
         A UTC date with format %Y-%m-%dT%H:%M:%SZ.
     """
     
-    new_date = datetime.strptime(
-        date, '%Y-%m-%dT%H:%M:%SZ').replace(
-            tzinfo = ZoneInfo("UTC")).astimezone(
-                ZoneInfo('America/Sao_Paulo')
-                )
-    return new_date
+    try:
+        new_date = datetime.strptime(
+            date, '%Y-%m-%dT%H:%M:%SZ').replace(
+                tzinfo = ZoneInfo("UTC")).astimezone(
+                    ZoneInfo('America/Sao_Paulo')
+                    )
+        return new_date
+    except:
+        exit(f'{datetime.now()} - Error converting dates.')

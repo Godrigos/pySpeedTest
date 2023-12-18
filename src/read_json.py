@@ -1,6 +1,7 @@
 import json
 from os.path import exists
 from settings import directory
+from datetime import date, datetime
 from src.tz_converter import tz_converter
 
 def results_to_tsv(filepath: str) -> None:
@@ -19,7 +20,7 @@ def results_to_tsv(filepath: str) -> None:
         with open(f'{directory}/data/results.json', mode = 'rt') as file:
             data = json.load(file)
     except:
-        exit('Error reading file results.json')
+        exit(f'{datetime.now()} - Error reading file results.json')
     else:
 
         if not exists(filepath):
@@ -30,4 +31,4 @@ def results_to_tsv(filepath: str) -> None:
             with open(filepath, mode = 'at') as file:
                 file.write(f"{tz_converter(data['timestamp'])}\t{data['isp']}\t{data['interface']['externalIp']}\t{data['server']['name']}\t{data['server']['location']}\t{data['ping']['latency']}\t{data['download']['bandwidth']/125000}\t{data['download']['latency']['iqm']}\t{data['upload']['bandwidth']/125000}\t{data['upload']['latency']['iqm']}\t{data['packetLoss']}\t{data['result']['id']}\n")
         except:
-            exit(f'Error writing data to {filepath}')
+            exit(f'{datetime.now()} - Error writing data to {filepath}')

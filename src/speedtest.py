@@ -1,4 +1,5 @@
 import subprocess
+from datetime import datetime
 from settings import directory
 
 def speedtest() -> None:
@@ -21,4 +22,4 @@ def speedtest() -> None:
             with open(f'{directory}/data/results.json', mode = 'wt') as file: 
                 file.write(result.stdout.decode('utf-8'))
         except:
-            exit('Error saving data.')
+            exit(f'{datetime.now()} - Error saving data.')
