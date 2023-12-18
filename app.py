@@ -23,7 +23,6 @@ args = parser.parse_args()
 
 def main() -> None:
     speedtest()
-    print(args.output)
     results_to_tsv(args.output)
 
 if __name__ == "__main__":
