@@ -22,10 +22,12 @@ def results_to_tsv(filepath: str) -> None:
     except:
         exit(f'{datetime.now()} - Error reading file results.json')
     else:
-
-        if not exists(filepath):
-            with open(filepath, mode = 'w+') as file:
-                file.write('Date\tISP\tIP\tServer\tLocation	Latency (ms)\tDownload Speed (Mbps)\tDownload Latency (ms)\tUpload Speed (Mbps)\tUpload Latency (ms)\tPacket Loss (%)\tId\n')
+        try:
+            if not exists(filepath):
+                with open(filepath, mode = 'w+') as file:
+                    file.write('Date\tISP\tIP\tServer\tLocation	Latency (ms)\tDownload Speed (Mbps)\tDownload Latency (ms)\tUpload Speed (Mbps)\tUpload Latency (ms)\tPacket Loss (%)\tId\n')
+        except:
+            exit(f'{datetime.now()} - Error creating file {filepath}')
 
         try:
             with open(filepath, mode = 'at') as file:
