@@ -26,7 +26,22 @@ def results_to_tsv(filepath: str) -> None:
         try:
             if not exists(filepath):
                 with open(filepath, mode = 'w+') as file:
-                    file.write('Date\tISP\tIP\tServer\tLocation	Latency (ms)\tDownload Speed (Mbps)\tDownload Latency (ms)\tUpload Speed (Mbps)\tUpload Latency (ms)\tPacket Loss (%)\tId\n')
+                    file.write(
+                        'Date'
+                        '\tISP'
+                        '\tIP'
+                        '\tServer'
+                        '\tLocation'
+                        '\tLatency (ms)'
+                        '\tDownload Speed (Mbps)'
+                        '\tDownload Size (MB)'
+                        '\tDownload Latency (ms)'
+                        '\tUpload Speed (Mbps)'
+                        '\tUpload Size (MB)'
+                        '\tUpload Latency (ms)'
+                        '\tPacket Loss (%)'
+                        '\tId'
+                        '\n')
                 file.close()
         except:
             exit(f'{datetime.now()} - Error creating file {filepath}')
@@ -41,8 +56,10 @@ def results_to_tsv(filepath: str) -> None:
                     f"\t{data['server']['location']}"
                     f"\t{data['ping']['latency']}"
                     f"\t{data['download']['bandwidth']/125000}"
+                    f"\t{data['download']['bytes']/1000000}"
                     f"\t{data['download']['latency']['iqm']}"
                     f"\t{data['upload']['bandwidth']/125000}"
+                    f"\t{data['upload']['bytes']/1000000}"
                     f"\t{data['upload']['latency']['iqm']}"
                     f"\t{data['packetLoss']}"
                     f"\t{data['result']['id']}"
